@@ -17,10 +17,15 @@ package Strategy;
 
 import Card.Card;
 import Card.ThrowCard;
+import static Strategy.DoyuAttack.pointMap;
+import java.util.HashMap;
+import java.util.Map;
 
 public class ThrowAttack implements StrategyInterface {
 
 	public int range = 5;
+         public static Map<String,Integer> pointMap = new HashMap<String,Integer>();
+        public static String winner = "";
 	
 	public ThrowAttack() {
 	}
@@ -78,6 +83,8 @@ public class ThrowAttack implements StrategyInterface {
 			if (damage > 0) {
 				System.out.println("Reducing the opponent's life " + damage + " points");
 				target_health -= damage;
+                                pointMap.put("Damage",target_health );
+                        
 			} else
 				System.out.println("Your damage is too low.");
 		} else
