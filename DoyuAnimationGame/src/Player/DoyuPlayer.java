@@ -96,6 +96,11 @@ public class DoyuPlayer implements Player {
 				hand++;
 			}
 		}
+		System.out.println("Point Record:");
+      for(Map.Entry<String,Integer> pair : DoyuAttack.pointMap.entrySet())
+      {
+            System.out.println("Player : "+ pair.getKey()+" Points : "+ pair.getValue() );
+      }
 
 		return 0;
 	}
